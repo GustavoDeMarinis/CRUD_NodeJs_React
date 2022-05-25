@@ -52,10 +52,22 @@ const TaskForm = ({
           placeholder="Select a priority"
           {...register('priority', { required: 'this field is required' })}
         >
-          <option value={1}>low</option>
-          <option value={2}>medium</option>
+          <option value={1}>Low</option>
+          <option value={2}>Medium</option>
           <option value={3}>High</option>
         </Select>
+        {state ? (
+          <Select
+            mt={3}
+            defaultValue={state}
+            {...register('state', { required: 'this field is required' })}
+          >
+            <option value={1}>New</option>
+            <option value={2}>In Progress</option>
+            <option value={3}>Finished</option>
+          </Select>
+        ) : null}
+
         {errors.priority && <Error>{errors.priority.message}</Error>}
         <Input
           mt={3}
