@@ -17,7 +17,7 @@ export const stateParser = (state) => {
     case 1:
       return 'New';
     case 2:
-      return 'In Process';
+      return 'In Progress';
     case 3:
       return 'Finished';
 
